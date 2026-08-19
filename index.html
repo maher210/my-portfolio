@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بورتفوليو | مطور ألعاب وباك إند</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- مكتبة FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- شريط التنقل (Navbar) -->
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#about">عني</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#projects">مشاريع الألعاب</a></li>
+            <li><a href="#docs">المستندات</a></li>
+            <li><a href="#resume">السيرة الذاتية</a></li>
+            <li><a href="#contact">تواصل معي</a></li>
+        </ul>
+    </nav>
+
+    <!--  سكشن البداية (الصورة والنبذة) -->
+    <section id="about" class="section">
+        <div class="about-content">
+            <img src="profile-placeholder.jpg" alt="صورتي" class="profile-img">
+            <h1>أهلاً، أنا [اسمك] 👋</h1>
+            <h2>مطور ويب Backend ومبرمج ألعاب (Unity)</h2>
+            <p>شغوف ببرمجة أنظمة اللعب (Gameplay Programming)، تصميم المستويات، وبناء واجهات خلفية قوية باستخدام PHP و Laravel.</p>
+        </div>
+    </section>
+
+    <!--  سكشن المهارات (أيقونات + تفاصيل متحركة) -->
+    <section id="skills" class="section bg-light">
+        <h2>المهارات التقنية</h2>
+        <div class="skills-grid">
+            <div class="skill-item" onclick="showSkill('unity')">
+                <i class="fa-brands fa-unity"></i>
+                <span>Unity 3D</span>
+            </div>
+            <div class="skill-item" onclick="showSkill('laravel')">
+                <i class="fa-brands fa-laravel"></i>
+                <span>Laravel</span>
+            </div>
+            <div id="skill-detail" class="skill-detail-box hidden"></div>
+        </div>
+    </section>
+
+    <!--  سكشن المشاريع  -->
+    <section id="projects" class="section">
+        <h2>مشاريع الألعاب</h2>
+        <div class="projects-grid">
+            <div class="project-card" onclick="openProjectModal('game1')">
+                <img src="game-placeholder.jpg" alt="لعبة 1">
+                <h3>اسم اللعبة</h3>
+            </div>
+        </div>
+    </section>
+
+    <!--  سكشن المستندات والفولدرات -->
+    <section id="docs" class="section bg-light">
+        <h2>مستندات وتحليلات</h2>
+        <div class="folders-container">
+            <div class="folder-tabs">
+                <button class="folder-tab active" onclick="openFolder('analysis')">Game Analysis</button>
+                <button class="folder-tab" onclick="openFolder('level')">Level Designs</button>
+                <button class="folder-tab" onclick="openFolder('system')">System Analysis</button>
+            </div>
+            <div id="folder-content" class="folder-content grid">
+                <!-- المحتوى يتغير حسب الفولدر المختار -->
+            </div>
+        </div>
+    </section>
+
+    <!--  سكشن السيرة الذاتية (Resume) -->
+    <section id="resume" class="section">
+        <h2>السيرة الذاتية</h2>
+        <div class="resume-actions">
+            <button class="btn" onclick="openResumeOverlay()">عرض الـ CV</button>
+            <a href="cv.pdf" download class="btn btn-outline">تحميل PDF</a>
+        </div>
+    </section>
+
+    <!--  سكشن التواصل (Contact) -->
+    <section id="contact" class="section bg-dark">
+        <h2>تواصل معي</h2>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <div id="global-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <button class="close-btn" onclick="closeOverlay()">×</button>
+            <div id="overlay-body"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
