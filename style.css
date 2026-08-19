@@ -198,3 +198,28 @@ h2 { margin-bottom: 2rem; color: #007bff; }
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* تنسيقات شاشات الجوال */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* وضع الشعار فوق والروابط بالأسفل */
+        text-align: center;
+        padding: 15px;
+    }
+    
+    header nav {
+        display: flex;
+        flex-wrap: wrap; /* السماح للروابط بالنزول لسطر جديد بانتظام */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    header nav a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    /* تصغير العناوين لتناسب الجوال */
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+}
