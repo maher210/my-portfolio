@@ -200,26 +200,36 @@ h2 { margin-bottom: 2rem; color: #007bff; }
 }
 /* تنسيقات شاشات الجوال */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* وضع الشعار فوق والروابط بالأسفل */
-        text-align: center;
-        padding: 15px;
+    /* تعديل شريط التنقل */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 10px;
     }
     
-    header nav {
-        display: flex;
-        flex-wrap: wrap; /* السماح للروابط بالنزول لسطر جديد بانتظام */
+    /* تعديل الروابط لتنزل في سطر جديد بانتظام */
+    .nav-links {
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        margin-top: 15px;
+        gap: 12px;
     }
 
-    header nav a {
+    .nav-links a {
         font-size: 14px;
-        margin: 0 5px;
+    }
+
+    /* إبعاد السكاشن قليلاً للأسفل حتى لا يغطيها شريط التنقل بعد أن أصبح أطول */
+    .section {
+        padding-top: 140px; 
     }
 
     /* تصغير العناوين لتناسب الجوال */
     h1 { font-size: 24px; }
     h2 { font-size: 20px; }
+    
+    /* تصغير الصورة الشخصية قليلاً على الجوال */
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
 }
